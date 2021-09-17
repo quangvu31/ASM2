@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="product_detail">
+        <form action='/users/insert' method="POST">
+            <label>ID product"</label>
+            <input type="text" placeholder="Enter Product ID" name="idproduct">
+            <label> Name Product"</label>
+            <input type="text" placeholder="Enter Product Name" name="nameproduct">
+            <label>Product Cost</label>
+            <input type="text" placeholder="Enter Product Cost" name="costp">
+            <label>Amount</label>
+            <input type="text" placeholder="Enter Product Cost" name="amount">
+            <label>Shop name</label>
+            <input type="text" placeholder="Enter Product Cost" name="shop name">
+            <button type="Submit"> Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

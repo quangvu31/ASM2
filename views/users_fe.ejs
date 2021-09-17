@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+<head>
+    <title>
+        <%= title %>
+    </title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rain Shop</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    </head>
+    <body>
+      <header class="main-header">
+          <!-- Logo -->
+              <span class="brand-text"><h3>Rain Shop</h3></span>
+          <br>
+          <!-- Header Navbar: style can be found in header.less -->
+          <nav class="navbar navbar-static-top">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="navbar-custom-menu">
+                        <ul class="dropdown-menu">
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+  <div class="pull-right">
+                                    <a  href="/">log out</a>
+                                </div>
+                            </li>
+                        </ul>
+            </div>
+        </nav>
+    </header>
+<body>
+
+
+    <%
+    // Display data table by JavaS
+
+    if(userData.rowCount == 0)
+    {
+        %>
+        <p> No data Found</p>
+        <%
+    }else
+    {
+        // Display header
+     %>
+            <table border="1">
+                <tr>
+                    <th>ID Product</th>
+                    <th>Produce Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Shop name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <%
+                // Display all rows , Object data : userData
+                //all rows: userData.rows, list array [...]
+                userData.rows.forEach(function(row) {
+                  //Display a row
+                  console.log(row);
+            %>
+                    <tr>
+                        <td>
+                            <%= row.idproduct %>
+                        </td>
+                        <td>
+                            <%= row.nameproduct %>
+                        </td>
+                        <td>
+                            <%= row.costp %>
+                        </td>
+                        <td>
+                            <%= row.amount %>
+                        </td>
+                        <td>
+                            <%= row.shop_name %>
+                        </td>
+                        <td>
+                            <a href='users/Edit/<%=row.idproduct%>'>Edit</a>
+                        </td>
+                        <td>
+                            <a href='users/Delete/<%=row.idproduct%>'>Delete </a>
+                        </td>
+                    </tr>
+                    <%
+                      });
+                    %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href='users/insert'>Insert</a> </td>
+                            <td></td>
+                        </tr>
+            </table>
+            <%
+                    }
+                     %>
+
+</body>
+
+</html>
